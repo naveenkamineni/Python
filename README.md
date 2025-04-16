@@ -151,3 +151,143 @@ env\Scripts\activate     # Windows
 ---
 
 Want this as a downloadable PDF or printable version? I can make one for you.
+
+
+Perfect! Here’s your **Python Cheatcodes** for those advanced (but super useful) concepts — explained simply and ready to use:
+
+---
+
+## 🔷 **1. Working with JSON**
+
+### 🔹 Parse JSON (string → Python)
+```python
+import json
+
+json_data = '{"name": "Naveen", "age": 25}'
+python_dict = json.loads(json_data)
+print(python_dict['name'])  # Naveen
+```
+
+### 🔹 Convert Python → JSON
+```python
+data = {'name': 'Naveen', 'course': 'Data Science'}
+json_string = json.dumps(data)
+print(json_string)
+```
+
+### 🔹 Read from JSON file
+```python
+with open('data.json', 'r') as f:
+    data = json.load(f)
+```
+
+### 🔹 Write to JSON file
+```python
+with open('data.json', 'w') as f:
+    json.dump(data, f)
+```
+
+---
+
+## 🔷 **2. `*args` and `**kwargs`**
+
+### 🔹 `*args`: accepts **multiple positional arguments**
+```python
+def add(*args):
+    return sum(args)
+
+print(add(1, 2, 3))  # 6
+```
+
+### 🔹 `**kwargs`: accepts **multiple keyword arguments**
+```python
+def greet(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+greet(name='Naveen', age=25)
+```
+
+### 🔹 Combine both
+```python
+def demo(*args, **kwargs):
+    print("Args:", args)
+    print("Kwargs:", kwargs)
+
+demo(1, 2, name='Naveen', country='India')
+```
+
+---
+
+## 🔷 **3. Iterators & Generators**
+
+### 🔹 Iterator
+```python
+nums = [1, 2, 3]
+it = iter(nums)
+print(next(it))  # 1
+print(next(it))  # 2
+```
+
+### 🔹 Generator Function
+```python
+def countdown(n):
+    while n > 0:
+        yield n
+        n -= 1
+
+for num in countdown(3):
+    print(num)
+```
+
+✅ Generators are **memory-efficient** and great for big data or pipelines.
+
+---
+
+## 🔷 **4. Decorators**
+
+### 🔹 Basic Decorator
+```python
+def decorator(func):
+    def wrapper():
+        print("Before function")
+        func()
+        print("After function")
+    return wrapper
+
+@decorator
+def say_hello():
+    print("Hello!")
+
+say_hello()
+```
+
+---
+
+## 🔷 **5. List Comprehensions Cheatcodes**
+
+### 🔹 Basic
+```python
+squares = [x**2 for x in range(5)]
+```
+
+### 🔹 With condition
+```python
+evens = [x for x in range(10) if x % 2 == 0]
+```
+
+### 🔹 Nested
+```python
+matrix = [[1,2],[3,4]]
+flat = [item for row in matrix for item in row]
+```
+
+### 🔹 Using function
+```python
+def square(x): return x*x
+result = [square(x) for x in range(5)]
+```
+
+---
+
+Want this bundled into a **downloadable PDF or code notebook (.ipynb)** for practice? I can prep that for you!
